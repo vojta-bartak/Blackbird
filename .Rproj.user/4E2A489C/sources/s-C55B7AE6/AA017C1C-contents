@@ -6,7 +6,7 @@ source("utils.R")
 source("stepAIC.R")
 
 # Load data
-load("kos.RData")
+load("data.RData")
 kos <- kos %>% 
   left_join(read.table("kos_data.csv", sep=",", header=T) %>% 
               mutate(ID = ID.mereni,
