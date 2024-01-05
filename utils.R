@@ -1,0 +1,246 @@
+# prediction for discrete predictors
+# ----------------------------------------------------------------------------------------
+
+# Function preparing new data matrix
+newdata.disc <- function(model, data){
+  df <- expand.grid(model$xlevels)
+  df$y <- 1
+  colnames(df)[dim(df)[2]] <- all.vars(formula(model))[1]
+  terms <- labels(terms(model))[!grepl(":", labels(terms(model)))]
+  cont.vars <- terms[sapply(terms, function(x) !is.factor(data[,x]))]
+  for (cv in cont.vars) {
+    df$cv <- mean(data[, cv])
+    colnames(df)[dim(df)[2]] <- cv
+    }
+  X <- model.matrix(formula(model), df)
+}
+
+# Function preparing a data frame with predictions 
+df.disc <- function(model, boot.object, data, method){
+  df <- expand.grid(model$xlevels)
+  X <- newdata.disc(model, data)
+  y <- X%*%coef(model)
+  df$fit <- y  
+  if (method == "wald"){
+    cov.mat <- var(boot.object$t[,1:length(coef(model))])
+    se <- sqrt(diag(X%*%cov.mat%*%t(X)))
+    df$lwr <- y-se*1.96
+    df$upr <- y+se*1.96
+  } else if (method == "boot"){
+    df$lwr <- apply(boot.object$t[,(length(coef(model))+1):dim(boot.object$t)[2]], 2, 
+                    function(x) sort(x)[floor(0.025*boot.object$R)])
+    df$upr <- apply(boot.object$t[,(length(coef(model))+1):dim(boot.object$t)[2]], 2, 
+                    function(x) sort(x)[floor(0.975*boot.object$R)])
+  }
+  df
+}
+
+plot.disc <- function(x.var, facet.formula=NULL, ylab="", xlab="", 
+                      model=mymodel, boot.object=b, data=data, method="wald"){
+  require(ggplot2)
+  df <- df.disc(model, boot.object, data, method)
+  p <- ggplot(df, aes(x=get(x.var), y=fit)) +
+    geom_jitter(data=data, aes(y=get(all.vars(formula(model))[1])), alpha=.2, width=.1) +
+    geom_point(color="red") +
+    geom_errorbar(aes(ymin=lwr, ymax=upr), color="red", width=.2) +
+    scale_y_continuous(name=ylab) +
+    scale_x_discrete(name=xlab) +
+    theme_bw() +
+    theme(panel.grid = element_blank())
+  if (!is.null(facet.formula)) p <- p + facet_grid(facet.formula)
+  p
+}
+
+
+# prediction for continous predictors
+# ----------------------------------------------------------------------------------------
+
+# Function preparing new data matrix
+newdata.cont <- function(variable, model, data){
+  x <- seq(min(data[, variable]), max(data[, variable]), .1)
+  X <- matrix(rep(0, length(coef(model))*length(x)), ncol = length(coef(model)))
+  colnames(X) <- names(coef(model))
+  terms <- labels(terms(model))[!grepl(":", labels(terms(model)))]
+  cont <- terms[sapply(terms, function(x) !is.factor(data[,x]))]
+  X[,cont] <- as.matrix(
+    as.data.frame(lapply(subset(data, select=cont), function(k) rep(mean(k), length(x))))
+  )
+  X[, 1] <- 1
+  X[, variable] <- x
+  X
+}
+
+# Function preparing a data frame with predictions 
+df.cont <- function(variable, model, boot.object, data=data){
+  cov.mat <- var(boot.object$t[,1:length(coef(model))], na.rm = TRUE)
+  X <- newdata.cont(variable, model, data)
+  y <- X%*%coef(model)
+  se <- sqrt(diag(X%*%cov.mat%*%t(X)))
+  data.frame(x=X[, variable], y=y, lwr=y-se*1.96, upr=y+se*1.96)
+}
+
+plot.cont <- function(variable, units, ylab, xlab, model=mymodel, boot.object=b, data=data,
+                      scale.x=scale_x_continuous(name=xlab)){
+  df <- df.cont(variable, model, boot.object, data)
+  ggplot(df, aes(x=x, y=y)) +
+    geom_point(data=data, aes(x=get(variable), y=get(all.vars(formula(model))[1])), alpha=.2) +
+    geom_line(color="red") +
+    geom_ribbon(aes(ymin=lwr, ymax=upr), fill="red", alpha=.3) +
+    scale_y_continuous(name=ylab) +
+    scale.x +
+    theme_bw() +
+    theme(panel.grid = element_blank())
+}
+
+
+# prediction for continous predictors with interactions (only 2 levels considered)
+# ----------------------------------------------------------------------------------------
+
+# Function preparing new data matrix
+newdata.inter <- function(variable, interact.factor, model, data){
+  x <- seq(min(data[, variable]), max(data[, variable]), .1)
+  X <- matrix(rep(0, length(coef(model))*length(x)), ncol = length(coef(model)))
+  colnames(X) <- names(coef(model))
+  terms <- labels(terms(model))[!grepl(":", labels(terms(model)))]
+  cont <- terms[sapply(terms, function(x) !is.factor(data[,x]))]
+  X[,cont] <- as.matrix(
+    as.data.frame(lapply(subset(data, select=cont), function(k) rep(mean(k), length(x))))
+  )
+  X[, 1] <- 1
+  X[, variable] <- x
+  n <- dim(X)[1]
+  X <- rbind(X,X)
+  index1 <- paste(interact.factor, levels(data[, interact.factor])[2], sep="")
+  index2 <- paste(interact.factor, levels(data[, interact.factor])[2], ":", variable, sep="")
+  X[(n+1):(2*n), index1] <- 1
+  X[(n+1):(2*n), index2] <- x
+  X
+}
+
+# Function preparing a data frame with predictions 
+df.inter <- function(variable, interact.factor, model, boot.object, data=data){
+  cov.mat <- var(boot.object$t[,1:length(coef(model))])
+  X <- newdata.inter(variable, interact.factor, model, data)
+  y <- X%*%coef(model)
+  se <- sqrt(diag(X%*%cov.mat%*%t(X)))
+  index <- paste(interact.factor, levels(data[, interact.factor])[2], sep="")
+  inter <- ifelse(X[,index]==0, levels(data[, interact.factor])[1], 
+                  levels(data[, interact.factor])[2])
+  data.frame(x=X[, variable], y=y, inter=inter, lwr=y-se*1.96, upr=y+se*1.96)
+}
+
+plot.inter <- function(variable, interact.factor, units, ylab, xlab, model=mymodel, 
+                       boot.object=b, data=data, horizonthal=T, 
+                       scale.x = scale_x_continuous(name=xlab)){
+  df <- df.inter(variable, interact.factor, model, boot.object, data)
+  facet.form <- ifelse(horizonthal, "~inter", "inter~.")
+  data$inter <- data[,interact.factor]
+  ggplot(df, aes(x=x, y=y)) +
+    geom_point(data=data, aes(x=get(variable), y=get(all.vars(formula(model))[1])), alpha=.2) +
+    #geom_smooth(data=data, aes(x=get(variable), y=get(all.vars(formula(model))[1])), method="lm") +
+    geom_line(color="red") +
+    geom_ribbon(aes(ymin=lwr, ymax=upr), fill="red", alpha=.3) +
+    facet_grid(facet.form) +
+    scale_y_continuous(name=ylab) +
+    scale.x +
+    theme_bw() +
+    theme(panel.grid = element_blank())
+}
+
+
+# R squared
+# ----------------------------------------------------------------------------------------
+# r2 <- function(model){
+#   a <- anova(model)
+#   r2 <- a$`Sum Sq`/sum(a$`Sum Sq`)
+#   names(r2) <- row.names(a)
+#   r2[length(r2)] <- 1-r2[length(r2)]
+#   names(r2)[length(r2)] <- "Total"
+#   r2
+# }
+
+importance <- function(model, rterm=""){
+  require(performance)
+  terms <- labels(terms(model))
+  vars <- all.vars(formula(model))
+  resp <- vars[1]
+  preds <- vars[2:length(vars)]
+  c(All = as.numeric(r2(model)$R2), sapply(preds, function(p){
+    frml <- paste(resp,paste(terms[!grepl(p, terms)], collapse = "+"), sep="~")
+    if (rterm != "") frml <- paste(frml, rterm, sep = "+")
+    frml <- as.formula(frml)
+    as.numeric(r2(model)[1]$R2 - r2(update(model, frml))[1]$R2)
+  }))
+}
+
+importance2 <- function(model, data=kos, rfac="loc", nrep=100){
+  vars <- all.vars(formula(model))
+  resp <- as.character(formula(model))[2]
+  vars <- vars[!vars %in% c(resp, rfac)]
+  suppressMessages(
+    sapply(vars, function(var) {
+      d <- data
+      sapply(1:nrep, function(i){
+        d[,var] <- d[sample(1:nrow(data)),var]
+        1 - cor(predict(model, re.form=NULL), predict(update(model, data=d), re.form=NULL))
+      }) %>% mean
+    })
+  )  
+}
+
+
+
+# Bootstrap significance
+# ----------------------------------------------------------------------------------------
+boot.signif <- function(model, boot.object, num.pars=length(coef(model))){
+  # ci <- confint(boot.object, level = c(.95, .99, .999))
+  ci <- lapply(1:num.pars, function(i){
+    as.vector(boot.ci(boot.object, conf=c(0.999, 0.99, 0.95), type="perc", index=i)$percent[,4:5]) %>% 
+      set_names(paste("CI",c(.0005,0.005,0.025,.975,.995,.9995), sep=""))
+  }) %>% bind_rows
+  s <- ifelse(ci[1:num.pars,1] <= 0 & ci[1:num.pars,6] >= 0, ifelse(
+    ci[1:num.pars,2] <= 0 & ci[1:num.pars,5] >= 0, ifelse(
+      ci[1:num.pars,3] <= 0 & ci[1:num.pars,4] >= 0, "", "*"
+    ), "**"
+  ), "***")
+  #r2 <- r2(model)*100
+  print.out <- cbind(summary(boot.object)[1:num.pars,2:3], ci[1:num.pars,3:4], s) #, 
+##        "R squared"=c(r2[length(r2)], r2[-length(r2)]))
+  names(print.out)[5] <- "Sign"
+  rownames(print.out) <- names(coef(model))
+  print(print.out, digits = 2)
+  out <- cbind(summary(boot.object)[1:num.pars,2:4], ci[1:num.pars,])
+  rownames(out) <- names(coef(model))
+  out
+}
+
+# Model selection based on AIC
+# ----------------------------------------------------------------------------------------
+modsel <- function(model, tres=2, trace=FALSE){
+  out <- data.frame(drop.var=character(0), delta.AIC=numeric(0), delta.AIC.tot=numeric(0))
+  mod <- model
+  lastAIC <- extractAIC(model)[2]
+  minAIC <- extractAIC(model)[2]
+  delAIC <- 0
+  totdelAIC <- 0
+  while (totdelAIC >= -tres){
+    d <- drop1(mod)
+    if(trace) print(d)
+    aic = min(d$AIC)
+    v <- rownames(d)[d$AIC==aic]
+    if (v == "<none>"){
+      aic = min(d$AIC[rownames(d)!="<none>"])
+      v <- rownames(d)[d$AIC==aic]
+    } 
+    form <- paste(".~.-", v, sep="")
+    delAIC <- lastAIC - aic
+    totdelAIC <- minAIC-aic
+    out <- rbind(out, data.frame(drop.var=v, delta.AIC=delAIC, delta.AIC.tot=totdelAIC))
+    minAIC <- min(minAIC, d$AIC)
+    lastAIC <- aic
+    lastMod <- mod
+    mod <- update(mod, form)
+  }
+  print(out, digits=2)
+  list(path=out, model=lastMod)
+}

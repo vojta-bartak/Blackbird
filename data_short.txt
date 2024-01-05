@@ -1,0 +1,174 @@
+ID	typ	lokalita	datum	sunset	sunrise	end	start
+1K	klid	Olšanské høbitovy	19.4.2014	20:00	6:01	20:14	4:09
+2K	klid	Øíèanský les	8.5.2014	20:29	5:25	20:36	4:47
+3K	klid	Klánovice	21.5.2014	20:49	5:08	20:54	4:20
+4K	klid	Kersko	30.5.2014	20:59	4:58	21:21	4:08
+5K	klid	Kersko	30.5.2014	20:59	4:58	21:21	4:08
+6K	klid	Kersko	4.6.2014	21:04	4:55	21:34	4:11
+7K	klid	Kersko	4.6.2014	21:04	4:55	21:30	4:35
+8K	klid	Kersko	4.6.2014	21:04	4:55	21:02	3:55
+1H	hluk	Øíèanský les	8.5.2014	20:29	5:25	20:36	4:47
+2H	hluk	Klánovice-u trati	21.5.2014	20:49	5:08	21:08	4:05
+3H	hluk	Kersko - u dálnice	30.5.2014	20:59	4:58	21:22	4:27
+4H	hluk	Kersko	30.5.2014	20:59	4:58	21:10	4:45
+5H	hluk	Kersko	4.6.2014	21:04	4:55	21:13	4:11
+1S	svìtlo	Stromovka	8.4.2014	19:43	6:24	20:05	5:37
+2S	svìtlo	Stromovka	8.4.2014	19:43	6:24	19:44	5:39
+3S	svìtlo	Petøín	19.4.2014	20:00	6:01	20:37	4:21
+4S	svìtlo	Stromovka	1.5.2014	20:19	5:39	20:45	4:41
+5S	svìtlo	Petøín	8.5.2014	20:29	5:28	20:59	4:00
+6S	svìtlo	Petøín	8.5.2014	20:29	5:28	20:51	4:15
+7S	svìtlo	Hostivaø	30.5.2014	20:58	4:58	20:14	3:49
+8S	svìtlo	Kinského zahrady	4.6.2014	21:03	4:54	21:06	4:10
+1SH	svìtlo + hluk 	Park Pøátelství	8.4.2014	19:43	6:22	19:49	3:48
+2SH	svìtlo + hluk 	Park Pøátelství	8.4.2014	19:43	6:22	20:17	4:02
+3SH	hluk+svìtlo	Letenské sady	26.4.2014	20:11	5:48	20:30	3:55
+4SH	hluk+svìtlo	Letenské sady	26.4.2014	20:11	5:48	20:38	4:17
+5SH	hluk+svìtlo	Letenské sady	8.5.2014	20:29	5:27	21:13	3:50
+6SH	svìtlo + hluk	Kinského Sady	21.5.2014	20:49	5:08	21:32	4:00
+7SH	svìtlo+hluk	Hostivaø	30.5.2014	20:58	4:58	21:00	3:49
+8SH	hluk+svìtlo	Letenské sady	30.5.2014	20:59	4:59	21:05	3:30
+9SH	hluk+svìtlo	Letenské sady	30.5.2014	20:59	4:59	21:13	3:50
+10SH	hluk+svìtlo	Letenské sady	30.5.2014	20:59	4:59	21:13	3:44
+9K	klid	les u Zdejcina	6.3.2015	17:52	6:38	18:19	5:57
+10K	klid	les u Zdejcina	6.3.2015	17:52	6:38	18:19	5:45
+6H	hluk	CHKO Èeský kras	6.3.2015	17:52	6:38	18:21	5:45
+7H	hluk	CHKO Èeský kras	6.3.2015	17:52	6:38	18:19	5:29
+8H	hluk	CHKO Èeský kras	6.3.2015	17:52	6:38	18:14	5:52
+11K	klid	CHKO Brdy	20.3.2015	18:14	6:08	18:17	5:31
+12K	klid	CHKO Brdy	20.3.2015	18:14	6:08	18:46	5:43
+13K	klid	CHKO Brdy	20.3.2015	18:14	6:08	18:54	5:07
+9H	hluk	lesopark Knihov	20.3.2015	18:14	6:08	18:53	5:05
+10H	hluk	lesopark Knihov	20.3.2015	18:14	6:08	19:01	5:16
+11H	hluk	lesopark Knihov	20.3.2015	18:14	6:08	19:00	5:16
+12H	hluk	lesopark Knihov	20.3.2015	18:14	6:08	18:57	5:30
+14K	klid	les u Zdejcina	27.3.2015	18:25	5:52	18:46	5:10
+15K	klid	les u Zdejcina	27.3.2015	18:25	5:52	18:38	5:09
+16K	klid	les u Zdejcina	27.3.2015	18:25	5:52	18:47	5:08
+13H	hluk	CHKO Èeský kras	27.3.2015	18:25	5:52	19:06	4:48
+14H	hluk	CHKO Èeský kras	27.3.2015	18:25	5:52	18:59	5:00
+15H	hluk	CHKO Èeský kras	27.3.2015	18:25	5:52	18:45	5:07
+17K	klid	CHKO Køivokládsko	3.4.2015	19:36	6:37	19:57	5:34
+18K	klid	CHKO Køivokládsko	3.4.2015	19:36	6:37	19:58	5:58
+19K	klid	CHKO Køivokládsko	3.4.2015	19:36	6:37	19:57	5:39
+16H	hluk	lodìnický les	3.4.2015	19:36	6:37	19:56	5:38
+17H	hluk	lodìnický les	3.4.2015	19:36	6:37	20:07	5:37
+18H	hluk	lodìnický les	3.4.2015	19:36	6:37	20:00	5:42
+20K	klid	CHKO Brdy	10.4.2015	19:49	6:20	20:04	5:22
+21K	klid	CHKO Brdy	10.4.2015	19:49	6:20	20:18	5:26
+22K	klid	CHKO Brdy	10.4.2015	19:49	6:20	20:15	5:25
+23K	klid	CHKO Brdy	10.4.2015	19:49	6:20	20:18	5:19
+19H	hluk	lesopark Knihov	10.4.2015	19:49	6:20	20:12	5:23
+20H	hluk	lesopark Knihov	10.4.2015	19:49	6:20	20:21	5:20
+21H	hluk	lesopark Knihov	10.4.2015	19:49	6:20	20:23	5:15
+24K	klid	CHKO Brdy	18.4.2015	20:00	6:06	20:28	5:18
+25K	klid	CHKO Brdy	18.4.2015	20:00	6:06	20:23	5:20
+26K	klid	CHKO Brdy	18.4.2015	20:00	6:06	20:20	5:18
+27K	klid	CHKO Brdy	18.4.2015	20:00	6:06	20:27	5:21
+22H	hluk	les u Jarova	18.4.2015	20:00	6:06	20:22	5:20
+23H	hluk	les u Jarova	18.4.2015	20:00	6:06	20:26	5:20
+24H	hluk	les u Jarova	18.4.2015	20:00	6:06	20:00	5:26
+28K	klid	CHKO Brdy	24.4.2015	20:09	5:54	20:37	4:52
+29K	klid	CHKO Brdy	24.4.2015	20:09	5:54	20:30	5:00
+30K	klid	CHKO Brdy	24.4.2015	20:09	5:54	20:30	4:59
+31K	klid	CHKO Brdy	24.4.2015	20:09	5:54	20:31	4:48
+25H	hluk	pøírodní park Kaèák	24.4.2015	20:09	5:54	20:24	4:52
+26H	hluk	pøírodní park Kaèák	24.4.2015	20:09	5:54	20:26	4:53
+27H	hluk	pøírodní park Kaèák	24.4.2015	20:09	5:54	20:29	4:59
+32K	klid	CHKO Køivokládsko	2.5.2015	20:22	5:39	20:50	4:40
+33K	klid	CHKO Køivokládsko	2.5.2015	20:22	5:39	20:56	4:39
+34K	klid	CHKO Køivokládsko	2.5.2015	20:22	5:39	20:59	4:38
+35K	klid	CHKO Køivokládsko	2.5.2015	20:22	5:39	20:34	4:46
+29H	hluk	lesopark Knihov	2.5.2015	20:22	5:39	20:59	4:43
+30H	hluk	lesopark Knihov	2.5.2015	20:22	5:39	20:59	4:41
+31H	hluk	lesopark Knihov	2.5.2015	20:22	5:39	20:57	4:45
+36K	klid	CHKO Køivokládsko	8.5.2015	20:31	5:29	21:01	4:33
+37K	klid	CHKO Køivokládsko	8.5.2015	20:31	5:29	21:02	4:32
+38K	klid	CHKO Køivokládsko	8.5.2015	20:31	5:29	20:58	4:26
+32H	hluk	CHKO Èeský kras	8.5.2015	20:31	5:29	21:08	4:29
+33H	hluk	CHKO Èeský kras	8.5.2015	20:31	5:29	20:53	4:40
+34H	hluk	CHKO Èeský kras	8.5.2015	20:31	5:29	20:47	5:01
+35H	hluk	CHKO Èeský kras	8.5.2015	20:31	5:29	21:09	5:47
+39K	klid	CHKO Brdy	15.5.2015	20:41	5:18	21:17	4:15
+40K	klid	CHKO Brdy	15.5.2015	20:41	5:18	21:06	4:20
+41K	klid	CHKO Brdy	15.5.2015	20:41	5:18	21:02	4:13
+36H	hluk	les u Jarova	15.5.2015	20:41	5:18	21:19	4:13
+37H	hluk	les u Jarova	15.5.2015	20:41	5:18	21:00	4:25
+38H	hluk	les u Jarova	15.5.2015	20:41	5:18	21:03	4:16
+39H	hluk	les u Jarova	15.5.2015	20:41	5:18	21:02	4:12
+42K	klid	CHKO Køivokládsko	22.5.2015	20:50	5:09	21:23	4:20
+43K	klid	CHKO Køivokládsko	22.5.2015	20:50	5:09	21:19	4:07
+44K	klid	CHKO Køivokládsko	22.5.2015	20:50	5:09	20:58	4:11
+40H	hluk	lesopark Knihov	22.5.2015	20:50	5:09	21:15	4:15
+41H	hluk	lesopark Knihov	22.5.2015	20:50	5:09	20:55	4:16
+42H	hluk	lesopark Knihov	22.5.2015	20:50	5:09	21:24	4:19
+43H	hluk	lesopark Knihov	22.5.2015	20:50	5:09	21:18	4:12
+45K	klid	CHKO Brdy	29.5.2015	20:59	5:02	21:07	4:07
+46K	klid	CHKO Brdy	29.5.2015	20:59	5:02	21:02	4:19
+47K	klid	CHKO Brdy	29.5.2015	20:59	5:02	21:20	4:17
+44H	hluk	les u Jarova	29.5.2015	20:59	5:02	21:23	4:11
+45H	hluk	les u Jarova	29.5.2015	20:59	5:02	21:09	4:56
+9S	svìtlo	Petøín	3.4.2015	19:37	6:34	19:57	4:03
+11SH	svìtlo+hluk	Kinského Sady	3.4.2015	19:37	6:34	20:04	4:58
+10S	svìtlo	Stromovka	10.4.2015	19:48	6:19	20:29	4:42
+12SH	svìtlo+hluk	Letná	10.4.2015	19:48	6:19	20:22	3:47
+11S	svìtlo	Ladronka	17.4.2015	20:00	6:02	20:36	5:00
+13SH	svìtlo+hluk	obora Hvìzda	17.4.2015	20:00	6:02	20:29	4:42
+12S	svìtlo	Petøín	24.4.2015	20:11	5:49	20:42	4:42
+14SH	svìtlo+hluk	Kinského Sady	24.4.2015	20:11	5:49	20:29	4:10
+13S	svìtlo	Ladronka	1.5.2015	20:22	5:36	20:54	4:40
+15SH	svìtlo+hluk	Ladronka	1.5.2015	20:22	5:36	20:39	4:05
+14S	svìtlo	Stromovka	8.5.2015	20:33	5:24	20:36	3:36
+16SH	svìtlo+hluk	Letná	8.5.2015	20:33	5:24	20:40	3:30
+15S	svìtlo	Petøín	22.5.2015	20:52	5:04	20:55	4:05
+17SH	svìtlo+hluk	Kinského Sady	22.5.2015	20:52	5:04	21:01	3:51
+16S	svìtlo	Ladronka	29.5.2015	21:01	4:59	21:13	3:47
+18SH	svìtlo+hluk	Ladronka	29.5.2015	21:01	4:59	21:22	4:05
+19SH	svìtlo+hluk	Víta Nejedlého - HK	6.3.2015	17:44	6:18	na	2:05
+17S	svìtlo	Jiráskovy sady - HK	20.3.2015	18:07	6:00	18:22	3:53
+18S	svìtlo	Jiráskovy sady - HK	20.3.2015	18:07	6:00	18:17	4:32
+20SH	svìtlo+hluk	Lipky - HK	20.3.2015	18:07	6:00	18:28	3:39
+21SH	svìtlo+hluk	Lipky - HK	20.3.2015	18:07	6:00	18:38	3:22
+22SH	svìtlo+hluk	Víta Nejedlého - HK	27.3.2015	18:18	5:45	na	2:41
+23SH	svìtlo+hluk	Víta Nejedlého - HK	27.3.2015	18:18	5:45	na	2:04
+19S	svìtlo	u mlejna - HK	27.3.2015	18:18	5:45	18:49	4:50
+20S	svìtlo	u mlejna - HK	27.3.2015	18:18	5:45	18:56	3:39
+21S	svìtlo	u mlejna - HK	27.3.2015	18:18	5:45	18:58	2:30
+22S	svìtlo	severní - HK	3.4.2015	19:29	6:29	20:11	5:57
+23S	svìtlo	park u soudu - HK	3.4.2015	19:29	6:29	20:12	5:10
+24S	svìtlo	park u soudu - HK	3.4.2015	19:29	6:29	19:57	3:01
+24SH	svìtlo+hluk	park u soudu - HK	3.4.2015	19:29	6:29	20:02	4:00
+25S	svìtlo	Sever -HK	10.4.2015	19:25	6:03	19:19	4:06
+25SH	svìtlo+hluk	park u vlaku - HK	10.4.2015	19:25	6:03	20:04	3:51
+26S	svìtlo	Sever -HK	10.4.2015	19:25	6:03	20:32	2:59
+26SH	svìtlo+hluk	šimkovy sady - HK	10.4.2015	19:25	6:03	20:23	2:51
+27SH	svìtlo+hluk	šimkovy sady - HK	10.4.2015	19:25	6:03	20:28	2:54
+27S	svìtlo	Jiráskovy sady - HK	17.4.2015	19:51	6:00	20:14	3:18
+28SH	svìtlo+hluk	Lipky - HK	17.4.2015	19:51	6:00	20:05	3:41
+29SH	svìtlo+hluk	Víta Nejedlého - HK	24.4.2015	20:02	5:46	20:44	2:12
+28S	svìtlo	jižní - HK	24.4.2015	20:02	5:46	20:41	3:13
+30SH	svìtlo+hluk	Víta Nejedlého - HK	24.4.2015	20:02	5:46	21:14	1:43
+29S	svìtlo	u mlejna - HK	24.4.2015	20:02	5:46	20:49	4:34
+30S	svìtlo	Sever -HK	2.5.2015	20:15	5:31	20:38	3:14
+31SH	svìtlo+hluk	Okružní - HK	2.5.2015	20:15	5:31	20:37	3:23
+31S	svìtlo	Sever -HK	2.5.2015	20:15	5:31	20:48	3:00
+32SH	svìtlo+hluk	Okružní - HK	2.5.2015	20:15	5:31	20:36	3:34
+33SH	svìtlo+hluk	Okružní - HK	2.5.2015	20:15	5:31	20:38	3:25
+32S	svìtlo	Sever -HK	8.5.2015	20:24	5:21	21:06	3:53
+34SH	svìtlo+hluk	šimkovy sady - HK	8.5.2015	20:24	5:21	20:55	2:47
+35SH	svìtlo+hluk	šimkovy sady - HK	8.5.2015	20:24	5:21	21:03	2:50
+36SH	svìtlo+hluk	šimkovy sady - HK	8.5.2015	20:24	5:21	20:57	4:17
+33S	svìtlo	šimkovy sady - HK	8.5.2015	20:24	5:21	21:03	3:31
+34S	svìtlo	Jiráskovy sady - HK	15.5.2015	20:34	5:10	21:19	3:21
+37SH	svìtlo+hluk	Víta Nejedlého - HK	15.5.2015	20:34	5:10	21:06	3:45
+35S	svìtlo	Jiráskovy sady - HK	15.5.2015	20:34	5:10	21:13	4:04
+38SH	svìtlo+hluk	Lipky - HK	15.5.2015	20:34	5:10	21:04	3:43
+39SH	svìtlo+hluk	Víta Nejedlého - HK	22.5.2015	20:44	5:01	21:14	3:15
+36S	svìtlo	u mlejna - HK	22.5.2015	20:44	5:01	21:13	4:10
+37S	svìtlo	u mlejna - HK	22.5.2015	20:44	5:01	21:21	3:34
+40SH	svìtlo+hluk	Víta Nejedlého - HK	22.5.2015	20:44	5:01	21:02	3:59
+38S	svìtlo	Sever -HK	29.5.2015	20:53	4:54	21:16	3:33
+41SH	svìtlo+hluk	park u vlaku - HK	29.5.2015	20:53	4:54	21:25	3:26
+39S	svìtlo	Sever -HK	29.5.2015	20:53	4:54	21:32	3:24
+42SH	svìtlo+hluk	park u vlaku - HK	29.5.2015	20:53	4:54	23:00	4:12
+40S	svìtlo	Sever -HK	29.5.2015	20:53	4:54	21:34	3:58
