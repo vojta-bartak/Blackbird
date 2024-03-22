@@ -6,7 +6,7 @@ source("utils.R")
 load("data.RData")
 kos_sc <- kos %>% mutate_if(is.numeric, scale)
 
-# Multicollineariry
+# Multicollineariry check
 vif(lm(start_rel ~ alan + noise_db + day + alan:noise_db + alan:day + noise_db:day +
          temp_sunrise+prec_sunrise+press_sunrise+humid_sunrise+wind_sunrise+cloud+moonlight, data=kos_sc))
 vif(lm(start_rel ~ alan + noise_db + day + alan:noise_db + alan:day + noise_db:day +

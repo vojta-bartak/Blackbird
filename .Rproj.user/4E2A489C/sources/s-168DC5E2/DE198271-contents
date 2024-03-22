@@ -1,7 +1,5 @@
 library(tidyverse)
 
-# Zakladni datove sady
-# -----------------------------------------------------------------------------------------
 kosL <- read.table("data_long.txt", sep='\t', header=T) %>% 
   full_join(read.table("data_long_extended.txt", sep='\t', header=T)) %>% 
   mutate(

@@ -1,26 +1,27 @@
 {
-    "id": "3643C434",
-    "path": "G:/ownCloud/Blackbird/data.R",
-    "project_path": "data.R",
+    "id": "CAB2D5FD",
+    "path": "G:/ownCloud/Blackbird/models.R",
+    "project_path": "models.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2131114012",
     "contents": "",
     "dirty": false,
-    "created": 1704459083925.0,
+    "created": 1708511169190.0,
     "source_on_save": false,
     "relative_order": 1,
     "properties": {
+        "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "53,0",
-        "scrollLine": "21"
+        "cursorPosition": "8,25",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1704469414,
+    "lastKnownWriteTime": 1711110536,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1704469414166,
+    "last_content_update": 1711110536642,
     "read_only": false,
     "read_only_alternatives": []
 }

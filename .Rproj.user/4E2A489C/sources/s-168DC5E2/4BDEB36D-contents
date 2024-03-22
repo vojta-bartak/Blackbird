@@ -243,3 +243,7 @@ stepAIC <- function(model){
   points(aics[which(aics==min(aics))]~c(1:length(aics))[which(aics==min(aics))], col = "red")
   return(mods[[which(aics == min(aics))]])
 }
+
+unscale <- function(x){
+  x*attr(x, 'scaled:scale') + attr(x, 'scaled:center')
+}
